@@ -1,0 +1,41 @@
+.menu-area{
+  width: 100%;
+  overflow: auto;
+  margin-top: -10px;
+  margin-left: -10px;
+  margin-bottom: -50px;
+  background-color: #262626;
+}
+.menu-area ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.menu-area ul li{
+  float: left;
+}
+.menu-area ul li a{
+  width: 120px;
+  display: block;
+  padding: 15px;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family:poppins;
+  font-size: 20px;
+  text-align: center;
+}
+.menu-area ul li a:hover{
+  background: #f00; 
+}
+#search{
+  width: 450px;
+  padding: 5px;
+  -webkit-border-radius:25px;
+  -moz-border-radius:25px;
+  border-radius:25px;
+  border: none;
+  font-size: 18px;
+  text-align: center;
+  margin: 15px;
+}

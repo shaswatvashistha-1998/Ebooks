@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>mainpage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/style2.css">
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+   <script src="static/js/new.js"></script>
+  </head>
+  <body>
+    <div class="menu-area">
+      <ul>
+        <form action="/s/" role="search">
+        <li><a href="#">Home</a></li>
+        <li><a href="{% url 'genre' %}">Genre</a></li>
+        <li><a href="{% url 'uploader' %}">Upload</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><input type="text" name="q" id="search" placeholder="what are you looking for" </li>
+        <li><a href="{% url 'search' %}"><input type="submit" name="" class="btn"></a></li>
+      </form>
+      </ul>
+    </div>
+    {% block body_block %}
+    <div class="cards">
+    {% for book in books %}
+  <div class="card">
+    <div class="card__image-holder">
+      <img class="card__image" src="{{ book.image.url }}" href="{{ book.pdf.url }}" alt="wave" />
+    </div>
+    <div class="card-title">
+      <a href="#" class="toggle-info btn">
+        <span class="left"></span>
+        <span class="right"></span>
+      </a>
+      <h2>
+          {{ book.name }}
+          <small>{{ book.Author }}</small>
+      </h2>
+    </div>
+    <div class="card-flap flap1">
+      <div class="card-description">
+        {{ book.Description }}
+      </div>
+      <div class="card-flap flap2">
+        <div class="card-actions">
+          <a href="{{ book.pdf.url }}" class="btn">Read more</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+</div>
+{% endblock %}
+  </body>
+</html>
