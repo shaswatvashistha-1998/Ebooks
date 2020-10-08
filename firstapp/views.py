@@ -6,7 +6,7 @@ from django.http import HttpResponse
 
 # Create your views here.
 class Mainpage(ListView):
-    template_name='base.html'
+    template_name='index.html'
     model=models.profileinfo
     context_object_name='books'
 class Upload(CreateView):
@@ -28,5 +28,5 @@ def search(request):
         context={}
     return render(request,template,context)
 def genre(request):
-    template='base.html'
+    template='index.html'
     return render(request,template)
